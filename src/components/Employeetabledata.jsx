@@ -1,4 +1,4 @@
-import { Alert, Button, Container, Group, Modal, Table, Text, Tooltip } from '@mantine/core'
+import { Alert, Button, Group, Modal, Table, Text, Tooltip } from '@mantine/core'
 import React, { useState } from 'react'
 import { IconEdit, IconTrash } from '@tabler/icons-react';
 import Employeeformwrapper from './Employeeformwrapper';
@@ -21,7 +21,7 @@ function Employeetabledata({ employeeListdata, setEmployeeListdata, deleteEmploy
             title: 'Please confirm your action',
             children: (
                 <Text size="sm">
-                   Are you sure you want to delete the data? This action is destructive and you will have to contact support to restore your data.
+                    Are you sure you want to delete the data? This action is destructive and you will have to contact support to restore your data.
                 </Text>
             ),
             labels: { confirm: 'Confirm', cancel: 'Cancel' },
@@ -62,14 +62,14 @@ function Employeetabledata({ employeeListdata, setEmployeeListdata, deleteEmploy
                                     employeeListdata.length !== 0 &&
                                     employeeListdata.map((empdata, index) => (
                                         <Table.Tr key={index}>
-                                            <Table.Td>{empdata.firstName}</Table.Td>
-                                            <Table.Td>{empdata.middleName}</Table.Td>
-                                            <Table.Td>{empdata.lastName}</Table.Td>
-                                            <Table.Td>{empdata.gender}</Table.Td>
-                                            <Table.Td>+91 {empdata.phoneNumber}</Table.Td>
-                                            <Table.Td>{empdata.modeOfContact}</Table.Td>
-                                            <Table.Td>{empdata.marritalStatus}</Table.Td>
-                                            <Table.Td>{empdata.immidiateJoiner}</Table.Td>
+                                            <Table.Td>{empdata.firstName ? empdata.firstName : <Text>--</Text>}</Table.Td>
+                                            <Table.Td>{empdata.middleName ? empdata.middleName : <Text>--</Text>}</Table.Td>
+                                            <Table.Td>{empdata.lastName ? empdata.lastName : <Text>--</Text>}</Table.Td>
+                                            <Table.Td>{empdata.gender ? empdata.gender : <Text>--</Text>}</Table.Td>
+                                            <Table.Td> {empdata.phoneNumber ? `+91 ${empdata.phoneNumber}` : <Text>--</Text>}</Table.Td>
+                                            <Table.Td>{empdata.modeOfContact ? empdata.modeOfContact : <Text>--</Text>}</Table.Td>
+                                            <Table.Td>{empdata.marritalStatus ? empdata.marritalStatus : <Text>--</Text>}</Table.Td>
+                                            <Table.Td>{empdata.immidiateJoiner ? empdata.immidiateJoiner : <Text>--</Text>}</Table.Td>
                                             <Table.Td>
                                                 <Group grow>
                                                     <Tooltip
@@ -107,7 +107,6 @@ function Employeetabledata({ employeeListdata, setEmployeeListdata, deleteEmploy
                                             </Table.Td>
                                         </Table.Tr>
                                     ))
-
                                 }
                             </Table.Tbody>
                         </Table>
