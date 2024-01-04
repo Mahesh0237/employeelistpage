@@ -21,10 +21,11 @@ function Employeetabledata({ employeeListdata, setEmployeeListdata, deleteEmploy
             title: 'Please confirm your action',
             children: (
                 <Text size="sm">
-                    Are you sure you want to delete the data? This action is destructive and you will have to contact support to restore your data.
+                    Are you sure you want to delete the data?
                 </Text>
             ),
-            labels: { confirm: 'Confirm', cancel: 'Cancel' },
+            labels: { confirm: 'Yes', cancel: 'Cancel' },
+            centered: true,
             onCancel: () => console.log('Cancel'),
             onConfirm: () => {
                 deleteEmployee(index)
@@ -39,7 +40,7 @@ function Employeetabledata({ employeeListdata, setEmployeeListdata, deleteEmploy
 
     return (
         <>
-            <Text size='lg' fw={700} ta="center" mt={50} mb={20}>Employees Data</Text>
+            <Text size='lg' fw={700} ta="center" mt={50} mb={20} c="#3d22e6">Employees Data</Text>
             {
                 employeeListdata.length !== 0 ?
                     <Table.ScrollContainer minWidth={500} >
@@ -112,8 +113,8 @@ function Employeetabledata({ employeeListdata, setEmployeeListdata, deleteEmploy
                         </Table>
                     </Table.ScrollContainer>
                     :
-                    <Alert >
-                        <Text fw={600}>No data</Text>
+                    <Alert>
+                        <Text fw={700}>No data</Text>
                     </Alert>
             }
 
@@ -122,7 +123,6 @@ function Employeetabledata({ employeeListdata, setEmployeeListdata, deleteEmploy
                 opened={editEmpdataModal}
                 onClose={closeEmpModal}
                 size={600}
-                withCloseButton={false}
             >
                 <Employeeformwrapper
                     empid={empid}

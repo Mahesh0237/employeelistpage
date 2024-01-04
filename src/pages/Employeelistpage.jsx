@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Employeeformwrapper from '../components/Employeeformwrapper'
 import Employeetabledata from '../components/Employeetabledata'
-import { Container } from '@mantine/core'
+import { Card, Container } from '@mantine/core'
 
 function Employeelistpage() {
     const [employeeListdata, setEmployeeListdata] = useState([])
@@ -16,6 +16,7 @@ function Employeelistpage() {
 
     return (
         <Container size={1200} py={50}>
+            <Card padding="lg"  withBorder>
             <Employeeformwrapper
                 employeeListdata={employeeListdata}
                 setEmployeeListdata={setEmployeeListdata}
@@ -25,6 +26,7 @@ function Employeelistpage() {
                 deleteEmployee={deleteEmployee}
                 setEmployeeListdata={setEmployeeListdata}
             />
+            </Card>
         </Container>
     )
 }

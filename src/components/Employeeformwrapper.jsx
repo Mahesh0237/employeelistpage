@@ -68,7 +68,7 @@ function Employeeformwrapper({ employeeListdata, setEmployeeListdata, empid, edi
             return false
         }
         if (lastName === '') {
-            setLastNameError('')
+            setLastNameError('enter the last name')
             return false
         }
         if (phoneNumber === '') {
@@ -88,7 +88,8 @@ function Employeeformwrapper({ employeeListdata, setEmployeeListdata, empid, edi
             return false
         }
         if (immidiateJoiner === '') {
-            setImmidiateJoinerError('')
+            setImmidiateJoinerError('select one option')
+            return false
         }
 
         setEmployeeListdata([...employeeListdata, employeeData])
@@ -151,7 +152,7 @@ function Employeeformwrapper({ employeeListdata, setEmployeeListdata, empid, edi
         <>
             <Card withBorder>
                 <Card.Section withBorder inheritPadding py={15}>
-                    <Text ta="center" fw={700} size='lg'>Employee Form</Text>
+                    <Text ta="center" fw={700} size='lg' c="#3d22e6">Employee Form</Text>
                 </Card.Section>
                 <Card.Section inheritPadding withBorder py={15}>
                     <Grid>
